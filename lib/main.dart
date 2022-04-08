@@ -56,29 +56,46 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 10),
-                Text(
-                  'Counter: $counter',
-                  style : const TextStyle(
-                    fontSize : 40,
-                    fontFamily: 'UbuntuBold',
-                  )
+                Container(
+                  width : double.infinity,
+                  color : Colors.grey[300],
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 40,
+                      ),
+                      child: Text(
+                        'Counter: $counter',
+                        style : const TextStyle(
+                          fontSize : 40,
+                          fontFamily: 'UbuntuBold',
+                        )
+                      ),
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 40),
-                RaisedButton(
-                  color : Colors.blue[800],
-                  onPressed: () {
-                    incrementCounter();
-                    showSnackBar(ctx);
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      'Increment',
-                      style : TextStyle(
-                        fontSize : 30,
-                        color : Colors.white,
-                        fontFamily: 'UbuntuBold',
-                      )
+                // ignore: sized_box_for_whitespace
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color : Colors.blue[800],
+                    onPressed: () {
+                      incrementCounter();
+                      showSnackBar(ctx);
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 30,
+                      ),
+                      child: Text(
+                        'Increment',
+                        style : TextStyle(
+                          fontSize : 30,
+                          color : Colors.white,
+                          fontFamily: 'UbuntuBold',
+                        )
+                      ),
                     ),
                   ),
                 ),
